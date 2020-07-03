@@ -12,6 +12,12 @@ a new NuGet package which targets Unity directly.
 I got fed up with Plex not supporting VR headsets besides toy ones like GearVR and Oculus Go, so this is
 intended to be used in a larger project to create a fully featured Plex client for Rift/Quest/Vive etc.
 
+As the original library is still under development, and new things being added, I'll try and backport this here
+where appropriate.
+
+If you're NOT using Unity or require all the features of the library, you're better off skipping this and
+going to the original. ;)
+
 
 Overview
 --------
