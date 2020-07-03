@@ -1,7 +1,17 @@
-plex-api
+plex-api-unity
 ==============
 
 ![.NET Core](https://github.com/jensenkd/plex-api/workflows/.NET%20Core/badge.svg)
+
+Why this fork?
+--------------
+The purpose of this fork is to utilise this excellent library within Unity 3D. There are a number of issues
+with using external .NET assemblies within Unity, and this fork is intended to solve all of them and create
+a new NuGet package which targets Unity directly.
+
+I got fed up with Plex not supporting VR headsets besides toy ones like GearVR and Oculus Go, so this is
+intended to be used in a larger project to create a fully featured Plex client for Rift/Quest/Vive etc.
+
 
 Overview
 --------
