@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
@@ -8,14 +8,14 @@ namespace Plex.Api.Models
     /// </summary>
     public class Director
     { 
-        [JsonPropertyName("id")]
-        [JsonConverter(typeof(IntValueConverter))]
+        [JsonProperty("id")]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
 
-        [JsonPropertyName("filter")]
+        [JsonProperty("filter")]
         public string Filter { get; set; }
         
-        [JsonPropertyName("tag")]
+        [JsonProperty("tag")]
         public string Tag { get; set; }
     }
 }

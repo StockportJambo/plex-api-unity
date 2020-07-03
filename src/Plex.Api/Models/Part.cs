@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
@@ -23,17 +23,17 @@ namespace Plex.Api.Models
     public class Part
     {
         // General 
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
 
         public string Key { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Duration { get; set; }
 
         public string File { get; set; }
 
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Size { get; set; }
 
         public string Container { get; set; }

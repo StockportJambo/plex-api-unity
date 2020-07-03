@@ -1,10 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Plex.Api.Models
 {
     public class PlexMediaContainer
     {
-        [JsonPropertyName("MediaContainer")]
+        [JsonProperty("MediaContainer")]
         public MediaContainer MediaContainer { get; set; }
     }
 }

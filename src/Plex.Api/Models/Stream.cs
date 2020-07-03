@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
@@ -19,24 +19,24 @@ namespace Plex.Api.Models
     /// </summary>
     public class Stream
     {
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Id { get; set; }
         
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int StreamType { get; set; }
         
-        [JsonPropertyName("_default")]
+        [JsonProperty("_default")]
         public bool Default { get; set; }
         
         public string Codec { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Index { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Bitrate { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long BitDepth { get; set; }
 
         public string ChromaLocation { get; set; }
@@ -51,43 +51,43 @@ namespace Plex.Api.Models
         
         public string ColorTrc { get; set; }
         
-        [JsonConverter(typeof(DoubleValueConverter))]
+        //[JsonConverter(typeof(DoubleValueConverter))]
         public double FrameRate { get; set; }
         
-        [JsonConverter(typeof(BooleanValueConverter))]
+        //[JsonConverter(typeof(BooleanValueConverter))]
         public bool HasScalingMatrix { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Height { get; set; }
         
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Level { get; set; }
         
         public string Profile { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long RefFrames { get; set; }
         
         public string ScanType { get; set; }
         
         public string StreamIdentifier { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Width { get; set; }
 
         public string DisplayTitle { get; set; }
         
-        [JsonConverter(typeof(BooleanValueConverter))]
+        //[JsonConverter(typeof(BooleanValueConverter))]
         public bool Selected { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long Channels { get; set; }
         
         public string Language { get; set; }
         
         public string LanguageCode { get; set; }
         
-        [JsonConverter(typeof(LongValueConverter))]
+        //[JsonConverter(typeof(LongValueConverter))]
         public long SamplingRate { get; set; }
         
         public string AudioChannelLayout { get; set; }

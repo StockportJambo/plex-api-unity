@@ -64,9 +64,9 @@ namespace Plex.Api.Api
 
             for (var i = 0; i < QueryParams.Count; i++)
             {
-                var (key, value) = QueryParams.ElementAt(i);
+                var kvp = QueryParams.ElementAt(i);
 
-                uriBuilder.Append($"{key}={value}");
+                uriBuilder.AppendFormat("{0}={1}", kvp.Key, kvp.Value);
 
                 var isLast = i == QueryParams.Count - 1;
 

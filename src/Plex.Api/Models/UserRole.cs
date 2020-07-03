@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Plex.Api.Models
 {
     public class UserRole
     {
-        [JsonPropertyName("Roles")]
+        [JsonProperty("Roles")]
         public List<string> Roles { get; set; }
     }
 }

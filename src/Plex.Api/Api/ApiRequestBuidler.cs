@@ -74,17 +74,17 @@ namespace Plex.Api.Api
 
         private void AddMultipleHeaders(Dictionary<string, string> headers)
         {
-            foreach (var (key, value) in headers)
+            foreach (var kvp in headers)
             {
-                AddSingleHeader(key, value);
+                AddSingleHeader(kvp.Key, kvp.Value);
             }
         }
 
         private void AddMultipleQueryParams(Dictionary<string, string> queryParams)
         {
-            foreach (var (key, value) in queryParams)
+            foreach (var kvp in queryParams)
             {
-                AddSingleQueryParam(key, value);
+                AddSingleQueryParam(kvp.Key, kvp.Value);
             }
         }
 

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
 {
     public class PlexAccount
     {
-        [JsonPropertyName("user")]
+        [JsonProperty("user")]
         public User User { get; set; }
     }
 
@@ -44,14 +44,14 @@ namespace Plex.Api.Models
     /// </summary>
     public class User
     {
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
 
         public string Email { get; set; }
         
         public string Uuid { get; set; }
         
-        [JsonPropertyName("joined_at")]
+        [JsonProperty("joined_at")]
         public DateTime JoinedAt { get; set; }
         
         public string Username { get; set; }
@@ -62,7 +62,7 @@ namespace Plex.Api.Models
         
         public bool HasPassword { get; set; }
 
-        [JsonPropertyName("authentication_token")]
+        [JsonProperty("authentication_token")]
         public string AuthenticationToken { get; set; }
         
         public DateTime? ConfirmedAt { get; set; }
@@ -71,13 +71,13 @@ namespace Plex.Api.Models
         
         public bool RememberMe { get; set; }
         
-        [JsonPropertyName("subscription")]
+        [JsonProperty("subscription")]
         public Subscription Subscription { get; set; }
         
-        [JsonPropertyName("roles")]
+        [JsonProperty("roles")]
         public UserRole Roles { get; set; }
         
-        [JsonPropertyName("entitlements")]
+        [JsonProperty("entitlements")]
         public List<string> Entitlements { get; set; }
     }
 }

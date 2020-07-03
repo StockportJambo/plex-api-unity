@@ -1,286 +1,286 @@
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models.Status
 {
     public class SessionWrapper
     {
-        [JsonPropertyName("MediaContainer")]
+        [JsonProperty("MediaContainer")]
         public SessionContainer SessionContainer { get; set; }
     }
 
     public class SessionContainer
     {
-        [JsonPropertyName("size")]
+        [JsonProperty("size")]
         public long Size { get; set; }
 
-        [JsonPropertyName("Metadata")]
+        [JsonProperty("Metadata")]
         public List<Session> Sessions { get; set; }
     }
 
     public class Session
     {
-        [JsonPropertyName("addedAt")]
+        [JsonProperty("addedAt")]
         public string AddedAt { get; set; }
 
-        [JsonPropertyName("art")]
+        [JsonProperty("art")]
         public string Art { get; set; }
 
-        [JsonPropertyName("contentRating")]
+        [JsonProperty("contentRating")]
         public string ContentRating { get; set; }
 
-        [JsonPropertyName("duration")]
+        [JsonProperty("duration")]
         public string Duration { get; set; }
 
-        [JsonPropertyName("grandparentArt")]
+        [JsonProperty("grandparentArt")]
         public string GrandparentArt { get; set; }
 
-        [JsonPropertyName("grandparentGuid")]
+        [JsonProperty("grandparentGuid")]
         public string GrandparentGuid { get; set; }
 
-        [JsonPropertyName("grandparentKey")]
+        [JsonProperty("grandparentKey")]
         public string GrandparentKey { get; set; }
 
-        [JsonPropertyName("grandparentRatingKey")]
+        [JsonProperty("grandparentRatingKey")]
         public string GrandparentRatingKey { get; set; }
 
-        [JsonPropertyName("grandparentTheme")]
+        [JsonProperty("grandparentTheme")]
         public string GrandparentTheme { get; set; }
 
-        [JsonPropertyName("grandparentThumb")]
+        [JsonProperty("grandparentThumb")]
         public string GrandparentThumb { get; set; }
 
-        [JsonPropertyName("grandparentTitle")]
+        [JsonProperty("grandparentTitle")]
         public string GrandparentTitle { get; set; }
 
-        [JsonPropertyName("guid")]
+        [JsonProperty("guid")]
         public string Guid { get; set; }
 
-        [JsonPropertyName("index")]
+        [JsonProperty("index")]
         public string Index { get; set; }
 
-        [JsonPropertyName("key")]
+        [JsonProperty("key")]
         public string Key { get; set; }
 
-        [JsonPropertyName("lastViewedAt")]
+        [JsonProperty("lastViewedAt")]
         public string LastViewedAt { get; set; }
 
-        [JsonPropertyName("librarySectionID")]
+        [JsonProperty("librarySectionID")]
         public string LibrarySectionId { get; set; }
 
-        [JsonPropertyName("librarySectionKey")]
+        [JsonProperty("librarySectionKey")]
         public string LibrarySectionKey { get; set; }
 
-        [JsonPropertyName("librarySectionTitle")]
+        [JsonProperty("librarySectionTitle")]
         public string LibrarySectionTitle { get; set; }
 
-        [JsonPropertyName("originallyAvailableAt")]
+        [JsonProperty("originallyAvailableAt")]
         public string OriginallyAvailableAt { get; set; }
 
-        [JsonPropertyName("parentGuid")]
+        [JsonProperty("parentGuid")]
         public string ParentGuid { get; set; }
 
-        [JsonPropertyName("parentIndex")]
+        [JsonProperty("parentIndex")]
         public string ParentIndex { get; set; }
 
-        [JsonPropertyName("parentKey")]
+        [JsonProperty("parentKey")]
         public string ParentKey { get; set; }
 
-        [JsonPropertyName("parentRatingKey")]
+        [JsonProperty("parentRatingKey")]
         public string ParentRatingKey { get; set; }
 
-        [JsonPropertyName("parentThumb")]
+        [JsonProperty("parentThumb")]
         public string ParentThumb { get; set; }
 
-        [JsonPropertyName("parentTitle")]
+        [JsonProperty("parentTitle")]
         public string ParentTitle { get; set; }
 
-        [JsonPropertyName("rating")]
+        [JsonProperty("rating")]
         public string Rating { get; set; }
 
-        [JsonPropertyName("ratingKey")]
+        [JsonProperty("ratingKey")]
         public string RatingKey { get; set; }
 
-        [JsonPropertyName("sessionKey")]
+        [JsonProperty("sessionKey")]
         public string SessionKey { get; set; }
 
-        [JsonPropertyName("summary")]
+        [JsonProperty("summary")]
         public string Summary { get; set; }
 
-        [JsonPropertyName("thumb")]
+        [JsonProperty("thumb")]
         public string Thumb { get; set; }
 
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonPropertyName("type")]
+        [JsonProperty("type")]
         public string Type { get; set; }
 
-        [JsonPropertyName("updatedAt")]
+        [JsonProperty("updatedAt")]
         public string UpdatedAt { get; set; }
 
-        [JsonPropertyName("viewOffset")]
+        [JsonProperty("viewOffset")]
         public string ViewOffset { get; set; }
 
-        [JsonPropertyName("year")]
-        [JsonConverter(typeof(IntValueConverter))]
+        [JsonProperty("year")]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Year { get; set; }
         
-        [JsonPropertyName("Director")]
+        [JsonProperty("Director")]
         public List<Director> Directors { get; set; }
 
-        [JsonPropertyName("Writer")]
+        [JsonProperty("Writer")]
         public List<Writer> Writers { get; set; }
 
-        [JsonPropertyName("Media")]
+        [JsonProperty("Media")]
         public List<Medium> Media { get; set; }
 
-        [JsonPropertyName("User")]
+        [JsonProperty("User")]
         public User User { get; set; }
 
-        [JsonPropertyName("Player")]
+        [JsonProperty("Player")]
         public Player Player { get; set; }
 
-        [JsonPropertyName("Session")]
+        [JsonProperty("Session")]
         public SessionDetail SessionDetail { get; set; }
 
-        [JsonPropertyName("TranscodeSession")]
+        [JsonProperty("TranscodeSession")]
         public TranscodeSession TranscodeSession { get; set; }
     }
    
     public class Player
     {
-        [JsonPropertyName("address")]
+        [JsonProperty("address")]
         public string Address { get; set; }
 
-        [JsonPropertyName("device")]
+        [JsonProperty("device")]
         public string Device { get; set; }
 
-        [JsonPropertyName("machineIdentifier")]
+        [JsonProperty("machineIdentifier")]
         public string MachineIdentifier { get; set; }
 
-        [JsonPropertyName("model")]
+        [JsonProperty("model")]
         public string Model { get; set; }
 
-        [JsonPropertyName("platform")]
+        [JsonProperty("platform")]
         public string Platform { get; set; }
 
-        [JsonPropertyName("platformVersion")]
+        [JsonProperty("platformVersion")]
         public string PlatformVersion { get; set; }
 
-        [JsonPropertyName("product")]
+        [JsonProperty("product")]
         public string Product { get; set; }
 
-        [JsonPropertyName("profile")]
+        [JsonProperty("profile")]
         public string Profile { get; set; }
 
-        [JsonPropertyName("remotePublicAddress")]
+        [JsonProperty("remotePublicAddress")]
         public string RemotePublicAddress { get; set; }
 
-        [JsonPropertyName("state")]
+        [JsonProperty("state")]
         public string State { get; set; }
 
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonPropertyName("vendor")]
+        [JsonProperty("vendor")]
         public string Vendor { get; set; }
 
-        [JsonPropertyName("version")]
+        [JsonProperty("version")]
         public string Version { get; set; }
 
-        [JsonPropertyName("local")]
+        [JsonProperty("local")]
         public bool Local { get; set; }
 
-        [JsonPropertyName("relayed")]
+        [JsonProperty("relayed")]
         public bool Relayed { get; set; }
 
-        [JsonPropertyName("secure")]
+        [JsonProperty("secure")]
         public bool Secure { get; set; }
 
-        [JsonPropertyName("userID")]
+        [JsonProperty("userID")]
         public long UserId { get; set; }
     }
 
     public class SessionDetail
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonPropertyName("bandwidth")]
+        [JsonProperty("bandwidth")]
         public long Bandwidth { get; set; }
 
-        [JsonPropertyName("location")]
+        [JsonProperty("location")]
         public string Location { get; set; }
     }
 
     public class TranscodeSession
     {
-        [JsonPropertyName("key")]
+        [JsonProperty("key")]
         public string Key { get; set; }
 
-        [JsonPropertyName("throttled")]
+        [JsonProperty("throttled")]
         public bool Throttled { get; set; }
 
-        [JsonPropertyName("complete")]
+        [JsonProperty("complete")]
         public bool Complete { get; set; }
 
-        [JsonConverter(typeof(DoubleValueConverter))]
-        [JsonPropertyName("progress")]
+        //[JsonConverter(typeof(DoubleValueConverter))]
+        [JsonProperty("progress")]
         public double Progress { get; set; }
 
-        [JsonConverter(typeof(DoubleValueConverter))]
-        [JsonPropertyName("speed")]
+        //[JsonConverter(typeof(DoubleValueConverter))]
+        [JsonProperty("speed")]
         public double Speed { get; set; }
 
-        [JsonConverter(typeof(LongValueConverter))]
-        [JsonPropertyName("duration")]
+        //[JsonConverter(typeof(LongValueConverter))]
+        [JsonProperty("duration")]
         public long Duration { get; set; }
 
-        [JsonPropertyName("context")]
+        [JsonProperty("context")]
         public string Context { get; set; }
 
-        [JsonPropertyName("sourceVideoCodec")]
+        [JsonProperty("sourceVideoCodec")]
         public string SourceVideoCodec { get; set; }
 
-        [JsonPropertyName("sourceAudioCodec")]
+        [JsonProperty("sourceAudioCodec")]
         public string SourceAudioCodec { get; set; }
 
-        [JsonPropertyName("videoDecision")]
+        [JsonProperty("videoDecision")]
         public string VideoDecision { get; set; }
 
-        [JsonPropertyName("audioDecision")]
+        [JsonProperty("audioDecision")]
         public string AudioDecision { get; set; }
 
-        [JsonPropertyName("protocol")]
+        [JsonProperty("protocol")]
         public string Protocol { get; set; }
 
-        [JsonPropertyName("container")]
+        [JsonProperty("container")]
         public string Container { get; set; }
 
-        [JsonPropertyName("videoCodec")]
+        [JsonProperty("videoCodec")]
         public string VideoCodec { get; set; }
 
-        [JsonPropertyName("audioCodec")]
+        [JsonProperty("audioCodec")]
         public string AudioCodec { get; set; }
 
-        [JsonPropertyName("audioChannels")]
+        [JsonProperty("audioChannels")]
         public long AudioChannels { get; set; }
 
-        [JsonPropertyName("transcodeHwRequested")]
+        [JsonProperty("transcodeHwRequested")]
         public bool TranscodeHwRequested { get; set; }
 
-        [JsonPropertyName("transcodeHwFullPipeline")]
+        [JsonProperty("transcodeHwFullPipeline")]
         public bool TranscodeHwFullPipeline { get; set; }
 
-        [JsonPropertyName("timeStamp")]
+        [JsonProperty("timeStamp")]
         public string TimeStamp { get; set; }
 
-        [JsonPropertyName("maxOffsetAvailable")]
+        [JsonProperty("maxOffsetAvailable")]
         public string MaxOffsetAvailable { get; set; }
 
-        [JsonPropertyName("minOffsetAvailable")]
+        [JsonProperty("minOffsetAvailable")]
         public string MinOffsetAvailable { get; set; }
     }
 }

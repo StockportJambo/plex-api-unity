@@ -1,15 +1,15 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
 {
     public class Country
     {
-        [JsonPropertyName("id")]
-        [JsonConverter(typeof(IntValueConverter))]
+        [JsonProperty("id")]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
         
-        [JsonPropertyName("tag")]
+        [JsonProperty("tag")]
         public string Tag { get; set; }
     }
 }

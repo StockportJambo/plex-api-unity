@@ -1,4 +1,4 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
@@ -30,33 +30,33 @@ namespace Plex.Api.Models
     /// </summary>
     public class Medium
     {
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
         
-        [JsonConverter(typeof(DoubleValueConverter))]
+        //[JsonConverter(typeof(DoubleValueConverter))]
         public double AspectRatio { get; set; }
          
         public string AudioProfile { get; set; }
       
         public string VideoProfile { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))] 
+        //[JsonConverter(typeof(IntValueConverter))] 
         public int AudioChannels { get; set; }
 
         public string AudioCodec { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))] 
+        //[JsonConverter(typeof(IntValueConverter))] 
         public int Bitrate { get; set; }
 
         public string Container { get; set; }
 
-        [JsonConverter(typeof(LongValueConverter))] 
+        //[JsonConverter(typeof(LongValueConverter))] 
         public long Duration { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))] 
+        //[JsonConverter(typeof(IntValueConverter))] 
         public int Height { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))] 
+        //[JsonConverter(typeof(IntValueConverter))] 
         public int OptimizedForStreaming { get; set; } // TODO Convert to boolean at some point.
 
         public string Protocol { get; set; }
@@ -67,13 +67,13 @@ namespace Plex.Api.Models
 
         public string VideoResolution { get; set; }
 
-        [JsonConverter(typeof(IntValueConverter))] 
+        //[JsonConverter(typeof(IntValueConverter))] 
         public int Width { get; set; }
 
         public bool Selected { get; set; }
         
         
-        [JsonPropertyName("Part")]
+        [JsonProperty("Part")]
         public Part[] Part { get; set; }
     }
 }

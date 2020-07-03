@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using Plex.Api.Helpers;
 
 namespace Plex.Api.Models
@@ -8,7 +8,7 @@ namespace Plex.Api.Models
     /// </summary>
     public class Writer
     {
-        [JsonConverter(typeof(IntValueConverter))]
+        //[JsonConverter(typeof(IntValueConverter))]
         public int Id { get; set; }
 
         public string Filter { get; set; }

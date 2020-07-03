@@ -1,19 +1,19 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Plex.Api.Models
 {
     public class Subscription
     {
-        [JsonPropertyName("active")]
+        [JsonProperty("active")]
         public bool Active { get; set; }
         
-        [JsonPropertyName("status")]
+        [JsonProperty("status")]
         public string Status { get; set; }
         
-        [JsonPropertyName("plan")]
+        [JsonProperty("plan")]
         public object Plan { get; set; }
         
-        [JsonPropertyName("features")]
+        [JsonProperty("features")]
         public object Features { get; set; }
     }
 }

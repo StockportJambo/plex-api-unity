@@ -1,68 +1,68 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Plex.Api.Models
 {
     public class Directory
     {
-        [JsonPropertyName("allowSync")]
+        [JsonProperty("allowSync")]
         public bool AllowSync { get; set; }
         
-        [JsonPropertyName("art")]
+        [JsonProperty("art")]
         public string Art { get; set; }
         
-        [JsonPropertyName("composite")]
+        [JsonProperty("composite")]
         public string Composite { get; set; }
         
-        [JsonPropertyName("filters")]
+        [JsonProperty("filters")]
         public bool Filters { get; set; }
         
-        [JsonPropertyName("refreshing")]
+        [JsonProperty("refreshing")]
         public bool Refreshing { get; set; }
         
-        [JsonPropertyName("thumb")]
+        [JsonProperty("thumb")]
         public string Thumb { get; set; }
 
-        [JsonPropertyName("key")]
+        [JsonProperty("key")]
         public string Key { get; set; }
         
-        [JsonPropertyName("type")] 
+        [JsonProperty("type")] 
         public string Type { get; set; }
         
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
         
-        [JsonPropertyName("agent")]
+        [JsonProperty("agent")]
         public string Agent { get; set; }
         
-        [JsonPropertyName("scanner")]
+        [JsonProperty("scanner")]
         public string Scanner { get; set; }
         
-        [JsonPropertyName("language")]
+        [JsonProperty("language")]
         public string Language { get; set; }
         
-        [JsonPropertyName("uuid")]
+        [JsonProperty("uuid")]
         public string Uuid { get; set; }
         
-        [JsonPropertyName("updatedAt")]
+        [JsonProperty("updatedAt")]
         public int UpdatedAt { get; set; }
 
-        [JsonPropertyName("createdAt")]
+        [JsonProperty("createdAt")]
         public int CreatedAt { get; set; }
         
-        [JsonPropertyName("scannedAt")]
+        [JsonProperty("scannedAt")]
         public int ScannedAt { get; set; }
         
-        [JsonPropertyName("content")]
+        [JsonProperty("content")]
         public bool Content { get; set; }
         
-        [JsonPropertyName("directory")]
+        [JsonProperty("directory")]
         public bool IsDirectory { get; set; }
         
-        [JsonPropertyName("contentChangedAt")]
+        [JsonProperty("contentChangedAt")]
         public int ContentChangedAt { get; set; }
       
         
-        [JsonPropertyName("Location")]
+        [JsonProperty("Location")]
         public Location[] Location { get; set; }
     }
 }

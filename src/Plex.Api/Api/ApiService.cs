@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Plex.Api.Api
 {
@@ -15,12 +15,6 @@ namespace Plex.Api.Api
         private readonly IPlexRequestsHttpClient _httpClient;
         private readonly ILogger<ApiService> _logger;
 
-        private static readonly JsonSerializerOptions JsonSerializationSettings = new JsonSerializerOptions
-        {
-            IgnoreNullValues = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        };
-        
         public ApiService(
             IPlexRequestsHttpClient httpClient,
             ILogger<ApiService> logger
@@ -32,7 +26,7 @@ namespace Plex.Api.Api
 
         public async Task InvokeApiAsync(ApiRequest request)
         {
-            using var httpRequestMessage = CreateHttpRequestMessage(request);
+            var httpRequestMessage = CreateHttpRequestMessage(request);
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -49,7 +43,7 @@ namespace Plex.Api.Api
 
         public async Task<T> InvokeApiAsync<T>(ApiRequest request)
         {
-            using var httpRequestMessage = CreateHttpRequestMessage(request);
+            var httpRequestMessage = CreateHttpRequestMessage(request);
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -81,7 +75,7 @@ namespace Plex.Api.Api
             }
             else
             {
-                response =  JsonSerializer.Deserialize<T>(contentResponse, JsonSerializationSettings);
+                response =  JsonConvert.DeserializeObject<T>(contentResponse);
             }
 
             return response;
@@ -89,9 +83,9 @@ namespace Plex.Api.Api
 
         private static void AddRequestHeaders(HttpRequestMessage httpRequestMessage, Dictionary<string, string> headers)
         {
-            foreach (var (key, value) in headers)
+            foreach (var kvp in headers)
             {
-                httpRequestMessage.Headers.Add(key, value);
+                httpRequestMessage.Headers.Add(kvp.Key, kvp.Value);
             }
         }
 
@@ -110,7 +104,7 @@ namespace Plex.Api.Api
 
         private static void SetJsonBody(HttpRequestMessage httpRequestMessage, object body)
         {
-            var jsonBody = JsonSerializer.Serialize(body, JsonSerializationSettings);
+            var jsonBody = JsonConvert.SerializeObject(body);
 
             httpRequestMessage.Content = new StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
             httpRequestMessage.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");

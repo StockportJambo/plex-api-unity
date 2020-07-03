@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Plex.Api.Models
 {
@@ -16,7 +16,7 @@ namespace Plex.Api.Models
         public string LibrarySectionUuid { get; set; }
         public string MediaTagPrefix { get; set; }
         public int MediaTagVersion { get; set; }
-        [JsonPropertyName("Metadata")]
+        [JsonProperty("Metadata")]
         public List<Metadata> Metadata { get; set; }
 
         //Library Sections
@@ -38,7 +38,7 @@ namespace Plex.Api.Models
         public string Summary { get; set; }
         public string Theme { get; set; }
         
-        [JsonPropertyName("Directory")]
+        [JsonProperty("Directory")]
         public List<Directory> Directory { get; set; }
         
         //TV Show Episode
